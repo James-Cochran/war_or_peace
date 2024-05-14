@@ -17,7 +17,7 @@ class Deck
     
     def percent_high_ranking
         high_ranking_count = high_ranking_cards.size
-        total_count = @cards.size.to_f
+        total_count = @cards.size.to_f.round(2)
         percentage = (high_ranking_count / total_count) * 100
     end
    
