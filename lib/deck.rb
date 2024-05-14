@@ -7,7 +7,7 @@ class Deck
         @cards = cards
     end
    
-    def rank_of_cards_at(index)
+    def rank_of_cards_at (index)
         @cards[index].rank
     end
     
@@ -17,7 +17,7 @@ class Deck
     
     def percent_high_ranking
         high_ranking_count = high_ranking_cards.size
-        total_count = @cards.size
+        total_count = @cards.size.to_f
         percentage = (high_ranking_count / total_count) * 100
     end
    
@@ -25,8 +25,8 @@ class Deck
         @cards.shift
     end
   
-    def add_card
-        @cards.push
+    def add_card(card)
+        @cards.push(card)
     end
 end
 
