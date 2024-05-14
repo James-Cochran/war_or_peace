@@ -7,17 +7,17 @@ class Deck
         @cards = cards
     end
    
-    def rank_of_cards_at (index)
-        cards[index].rank
+    def rank_of_cards_at(index)
+        @cards[index].rank
     end
     
     def high_ranking_cards 
-        high_ranking_cards = @cards.select{ | card| card.rank > 10}
+        high_ranking_cards = @cards.find_all{ | card | card.rank > 10}
     end
     
     def percent_high_ranking
-        high_ranking_count = high_ranking_cards.high_ranking_count
-        total_count = @cards.total_count
+        high_ranking_count = high_ranking_cards.size
+        total_count = @cards.size
         percentage = (high_ranking_count / total_count) * 100
     end
    
